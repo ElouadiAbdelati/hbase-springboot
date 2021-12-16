@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.NavigableMap;
 
@@ -56,7 +57,7 @@ public class HBaseClient {
     public void createTable(Class myClass) throws Exception {
         String[] className = myClass.getName().split("\\.");
         TableName tableName = TableName.valueOf(className[className.length - 1]);
-        List<String> families = DaoUtil.getAttributes(myClass);
+        List<String> families = Arrays.asList("ele");
         boolean isExists = this.tableExists(tableName.getNameAsString());
         if (!isExists) {
 

@@ -21,5 +21,6 @@ public class HbaseApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		hBaseClient.createTable(Annonce.class);
+		hBaseClient.insertOrUpdate("Annonce","1","ele","address","marrakech");
 	}
 }
