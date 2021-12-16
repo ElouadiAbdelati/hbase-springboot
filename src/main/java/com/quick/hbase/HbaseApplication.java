@@ -1,5 +1,6 @@
 package com.quick.hbase;
 
+import com.quick.hbase.bean.Annonce;
 import com.quick.hbase.config.HBaseClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,6 +20,6 @@ public class HbaseApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		hBaseClient.createTable("annonce","ele");
+		hBaseClient.createTable(Annonce.class);
 	}
 }
